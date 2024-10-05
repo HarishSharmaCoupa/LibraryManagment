@@ -1,0 +1,9 @@
+<h1> Users Details </h1>
+<hr>
+<% @users.each do |user| %>
+<p>Username: <%=user.username%> </p>
+<p>email: <%=user.email%> </p>
+<%= link_to 'Edit account', edit_user_path(user.id)%>
+<br>
+<hr>
+<%end%>
