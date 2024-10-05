@@ -1,0 +1,26 @@
+<style>
+#flash {
+    background-color: #5FCD46;
+    border-style: solid;
+}
+</style>
+<h1> User Details </h1>
+<p>Username: <%=@user.username%> </p>
+<p>email: <%=@user.email%> </p>
+<%= link_to 'Edit account', edit_user_path%>
+<br>
+<hr>
+<br>
+<%= will_paginate @books, :container => false %>
+<h2> Books Created by User <%= @user.username%></h2>
+<% @books.each_with_index do |book,index|%>
+<p><%=index+1%>.<p> Name: <%= book.name %>
+<p>ISBN: <%= book.isbn %></p>
+<p>Author: <%= book.author %></p>
+<p>Published Year: <%= book.year.to_date %></p>
+<p>Description: <%= book.description %></p>
+</div>
+<%end%>
+
+<%= link_to 'All the Books', books_path%>
+
